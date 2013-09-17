@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app>
+  <head>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <script src="/static/lib/angular.min.js"></script>
+    <script src="/static/app/js/signup.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/app/css/signup.css">
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="header">
+        <h1 class="header-text">SignUp</h1>
+      </div>
+      <div class="content" >
+        <div class="list-area" ng-controller="GroupListCtrl">
+          <div class="list-header">
+            <h2 class="list-headline"> Groups</h2>
+            <input class="text-search" ng-model="query" placeholder="Search"></input>
+          </div>
+          <ul class="group-list">
+            <li class="list-item" ng-repeat="group in groups |filter: query">
+              <h4 class="list-name">{{group.Name}}</h4>
+              <p class="list-descr">{{group.Description}}</p>
+            </li>
+          </ul>
+        </div>
+        <aside>
+        </aside>
+      </div>
+    </div>
+    <footer class="footer">
+    <h4 class="credit-line">Made By Ben McCormick</h4>
+    </footer>
+  </body>
+</html>
