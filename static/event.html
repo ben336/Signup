@@ -14,19 +14,11 @@
         </a>
       </div>
       <div class="content" >
-        <div class="list-area" ng-controller="GroupListCtrl">
+        <div class="list-area" ng-controller="EventCtrl">
           <div class="list-header">
-            <h1 class="list-headline"> Groups</h1>
-            <input class="text-search" ng-model="query" placeholder="Search"></input>
+            <h1 class="list-headline">{{event.Name}}</h1>
           </div>
           <ul class="group-list">
-            <li class="list-item" ng-repeat="group in groups |filter: query">
-              <a class="list-link" href="/events#?group={{group.ID}}">
-                <h4 class="list-name">{{group.Name}}</h4>
-                <p class="list-descr">{{group.Description}}</p>
-              </a>
-            </li>
-            </a>
           </ul>
         </div>
         <aside>
