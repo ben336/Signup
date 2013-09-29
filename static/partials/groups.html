@@ -1,0 +1,19 @@
+<div class="content" >
+  <div class="list-area">
+    <div class="list-header">
+      <h1 class="list-headline"> Groups</h1>
+      <input class="text-search" ng-model="query" placeholder="Search"></input>
+    </div>
+    <ul class="group-list">
+      <li class="list-item" ng-repeat="group in groups |filter: query">
+        <a class="list-link" href="#/groups/{{group.ID}}">
+          <h4 class="list-name">{{group.Name}}</h4>
+          <p class="list-descr">{{group.Description}}</p>
+        </a>
+      </li>
+      </a>
+    </ul>
+  </div>
+  <aside>
+  </aside>
+</div>
