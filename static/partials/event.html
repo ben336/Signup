@@ -7,7 +7,9 @@
         <li class="list-item" ng-repeat="role in event.Roles |filter: query">
           <div class="list-block" >
             <h4 class="list-name">{{role.role}}</h4>
-            <h4 class="list-user">{{role.volunteer}}</h4>
+            <h4 class="list-user" ng-hide="!role.volunteer"> 
+            - {{role.volunteer}}
+            </h4>
           </div>
         </li>
       </ul>

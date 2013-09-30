@@ -1,4 +1,4 @@
-
+# Routing
 routefunc = ($routeProvider) ->
 	groupsTemplate = 
 		templateUrl: '/static/partials/groups.html'
@@ -15,8 +15,18 @@ routefunc = ($routeProvider) ->
       when('/events/:eventId', eventTemplate).
       otherwise({redirectTo: '/groups'});
 
-angular.module('signup', []).config(['$routeProvider', routefunc]);
+angular.module('signup', ["signUpServices"]).config(['$routeProvider', routefunc]);
 
+# Services
+
+eventResource = ($resource) ->
+  $resource("/static/event.json", {}, { query: { method:'GET', params:{}, isArray:false}})
+
+angular.module("signUpServices", ["ngResource"]).factory('Event', eventResource);
+
+
+
+# Controllers
 
 window.GroupListCtrl  = ($scope) ->
 	$scope.groups = [
@@ -38,21 +48,7 @@ window.EventListCtrl  = ($scope, $routeParams) ->
 
 
 
-window.EventCtrl  = ($scope, $routeParams) ->
-	id = $routeParams.eventId;
-	event = { 	
-		ID:"1",
-		Name:"Offering Collection", 
-		Date:"9/22/2013",
-		Description:"Collecting for Offering"
-		Roles:[
-			{ role:"Collector 1" , volunteer: "John Doe"},
-			{ role:"Collector 2" , volunteer: "John Smith"},
-			{ role:"Collector 3" , volunteer: null},
-			{ role:"Collector 4" , volunteer: "Ben McCormick"},
-			{ role:"Collector 5" , volunteer: null},
-			{ role:"Collector 6" , volunteer: null},
-			{ role:"Collector 7" , volunteer: null},
-			{ role:"Collector 8" , volunteer: null}
-		]}
-	$scope.event = event
+window.EventCtrl  = ($scope, $routeParams,Event) ->
+	id = $routeParams.eventId
+	$scope.event = Event.query();
+

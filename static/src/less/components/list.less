@@ -1,20 +1,48 @@
 @listwidth: 500px;
 @listwidthphone:200px;
 
+
+.list {
+  display:block;
+
+}
+
+.role-list {
+  .list;
+}
+
+.event-list {
+  .list;
+}
+
+.group-list {
+  .list;
+}
+
 .list-item {
   list-style-type:none; 
   background-color: @darkgrey;
   width:@listwidth;
   .rounded-corners(5px);
   padding: 5px 10px 5px 10px;
-  margin-bottom:10px;
+  margin: 10px 20px 10px 20px;
   color: @white;
   font-family: @font;
   cursor:pointer;
+  float:left;
+}
+
+.big-list-item {
+  .list-item;
+
 }
 
 .list-item:hover {
    background-color:@darkergrey; 
+}
+
+.list-descr {
+  clear:both;
 }
 
 .list-link {
@@ -24,6 +52,12 @@
 
 .list-name {
   font-size: 20px;
+  float:left;
+}
+
+.list-user {
+  font-size: 20px;
+  float:left;
 }
 
 .list-header{

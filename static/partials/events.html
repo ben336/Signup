@@ -7,7 +7,7 @@
     </div>
     <ul class="event-list">
       <li class="list-item" ng-repeat="event in events |filter: query">
-      <a class="list-link" href="#events/{{event.EventID}}">
+      <a class="list-link" href="#/events/{{event.EventID}}">
         <h4 class="list-name">{{event.Name}}</h4>
         <h4 class="list-date">{{event.Date}}</h4>
         <p class="list-descr">{{event.Description}}</p>

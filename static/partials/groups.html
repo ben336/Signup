@@ -4,15 +4,17 @@
       <h1 class="list-headline"> Groups</h1>
       <input class="text-search" ng-model="query" placeholder="Search"></input>
     </div>
-    <ul class="group-list">
-      <li class="list-item" ng-repeat="group in groups |filter: query">
-        <a class="list-link" href="#/groups/{{group.ID}}">
-          <h4 class="list-name">{{group.Name}}</h4>
-          <p class="list-descr">{{group.Description}}</p>
+    <div>
+      <ul class="group-list">
+        <li class="big-list-item" ng-repeat="group in groups |filter: query">
+          <a class="list-link" href="#/groups/{{group.ID}}">
+            <h4 class="list-name">{{group.Name}}</h4>
+            <p class="list-descr">{{group.Description}}</p>
+          </a>
+        </li>
         </a>
-      </li>
-      </a>
-    </ul>
+      </ul>
+    </div>
   </div>
   <aside>
   </aside>
