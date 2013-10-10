@@ -1,0 +1,22 @@
+@footerheight:80px;
+
+
+.footer {
+	width:100%;
+	height:@footerheight;
+  background-color:lighten(@black, 15%);
+  color:@grey;
+  clear:both;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: 0 - @footerheight; 
+	overflow:none;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+  height: @footerheight; 
+}

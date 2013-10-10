@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="signup">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+    <script src="@routes.Assets.at("javascripts/lib/angular.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/lib/angular-resource.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/signup.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/signup.css")">
+  </head>
+  <body>
+    <div class="page-wrap">
+      <div class="header">
+        <a class="logo" href="/">
+        <h1 class="header-text">SignUp</h1>
+        </a>
+      </div>
+    
+      <div ng-view></div>
+    
+    </div>
+    <footer class="footer">
+    <h4 class="credit-line">Made By Ben McCormick</h4>  
+    </footer>
+  </body>
+</html>

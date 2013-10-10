@@ -1,0 +1,21 @@
+<div class="content" >
+    <div class="list-area">
+      <div class="list-header">
+        <h1 class="list-headline">Roles</h1>
+      </div>
+
+      <ul class="role-list">
+        <li class="list-item" ng-repeat="role in event.Roles |filter: query">
+          <div class="list-block" >
+            <h4 class="list-name">{{role.role}}</h4>
+            <h4 class="list-user" ng-hide="!role.volunteer"> 
+            - {{role.volunteer}}
+            </h4>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <aside>
+    </aside>
+  </div>
+</div>
