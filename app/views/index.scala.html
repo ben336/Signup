@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
     <script src="@routes.Assets.at("javascripts/lib/angular.min.js")"></script>
     <script src="@routes.Assets.at("javascripts/lib/angular-resource.min.js")"></script>
-    <script src="@routes.Assets.at("javascripts/signup.js")"></script>
+    @helper.requireJs(core = routes.Assets.at("javascripts/require.js").url, module = routes.Assets.at("javascripts/signup").url)
     <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/signup.css")">
   </head>
   <body>
