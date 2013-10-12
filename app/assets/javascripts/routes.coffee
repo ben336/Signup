@@ -1,17 +1,20 @@
-define ["controllers"] , ->
+define ["app", "controllers"] , (app, controllers)->
 
 	routefunc = ($routeProvider) ->
 		groupsTemplate = 
 			templateUrl: '/assets/partials/groups.html'
-			controller: GroupListCtrl
+			controller: "GroupListCtrl"
 		eventsTemplate = 
 			templateUrl: '/assets/partials/events.html' 
-			controller: EventListCtrl
+			controller: "EventListCtrl"
 		eventTemplate = 
 			templateUrl: '/assets/partials/event.html' 
-			controller:EventCtrl
+			controller: "EventCtrl"
 
 		$routeProvider.when('/groups', groupsTemplate).
 			when('/groups/:groupId', eventsTemplate).
 			when('/events/:eventId', eventTemplate).
 			otherwise({redirectTo: '/groups'});
+	
+
+	app.config(["$routeProvider", routefunc]);

@@ -9,3 +9,7 @@ libraryDependencies ++= Seq(
 )     
 
 play.Project.playJavaSettings
+
+requireJs += "signup.js"
+
+requireJsShim += "signup.js"
